@@ -42,6 +42,18 @@ int linked_stack_pop(stackType*stack) {
     return popItem;
 }
 
+void linked_stack_free(stackType*stack) {
+    //스택 초기화
+    //스택을 유지하면서 모든 노드를 삭제
+    node*nptr=stack->top;
+    while (nptr != NULL) {
+        stack->top=stack->top->link; //nptr->link
+        free(nptr);
+        nptr=stack->top;
+    }
+    stack->length=0;
+}
+
 void linked_stack_push(stackType*stack,int item) {
     //push
     //새로 삽입하는 노드가 스택의 맨 위의 데이터
