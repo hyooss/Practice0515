@@ -16,6 +16,7 @@ int main(void) {
     node*newNode1;
     node*newNode2;
     node*newNode3;
+    node*nptr;
 
     //스택의 초기화
     stack=(stackType*)malloc(sizeof(stackType));
@@ -38,13 +39,24 @@ int main(void) {
     newNode2->data=20;
     newNode2->link=NULL;
     stack->top=newNode2;
-    ㅣㅣㅣ호료로호ㅓ
 
     //push 30
     newNode3=(node*)malloc(sizeof(node));
     newNode3->data=30;
     newNode3->link=NULL;
     stack->top=newNode3;
+
+    //display
+    nptr=stack->top;
+    printf("Linked Stack=[");
+    while (nptr != NULL) {
+        printf("%d ",nptr->data);
+        nptr=nptr->link;
+        if (nptr != NULL) {
+            printf(" | ");
+        }
+        printf("]\n");
+    }
 
     return 0;
 }
