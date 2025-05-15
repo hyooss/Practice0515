@@ -91,6 +91,8 @@ void linked_stack_menu(stackType*stack) {
         }
         else if(menu==4) {
             printf("Exit\n");
+            linked_stack_free(stack);
+            linked_stack_display(stack);
             break;
         }
         else {
